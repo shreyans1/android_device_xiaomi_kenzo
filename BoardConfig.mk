@@ -45,7 +45,7 @@ TARGET_BOOTLOADER_BOARD_NAME := MSM8952
 TARGET_NO_BOOTLOADER := true
 
 # Kernel
-BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.console=ttyHSL0 androidboot.hardware=qcom ehci-hcd.park=3 androidboot.bootdevice=7824900.sdhci lpm_levels.sleep_disabled=1
+BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.console=ttyHSL0 androidboot.hardware=qcom ehci-hcd.park=3 androidboot.bootdevice=7824900.sdhci lpm_levels.sleep_disabled=1 androidboot.selinux=permissive
 BOARD_KERNEL_BASE := 0x80000000
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x02000000 --tags_offset 0x00000100
@@ -84,7 +84,6 @@ AUDIO_FEATURE_ENABLED_VOICE_CONCURRENCY := true
 #AUDIO_FEATURE_ENABLED_WMA_OFFLOAD := true
 AUDIO_USE_LL_AS_PRIMARY_OUTPUT := true
 BOARD_USES_ALSA_AUDIO := true
-USE_CUSTOM_AUDIO_POLICY := 1
 USE_XML_AUDIO_POLICY_CONF := 1
 
 # Bluetooth
@@ -112,15 +111,6 @@ BOARD_HARDWARE_CLASS += hardware/cyanogen/cmhw
 BOARD_USES_QCNE := true
 TARGET_LDPRELOAD := libNimsWrap.so
 
-# Dex pre-opt to speed up initial boot
-#ifeq ($(HOST_OS),linux)
-#  ifneq ($(TARGET_BUILD_VARIANT),eng)
-#    ifeq ($(WITH_DEXPREOPT),)
-#      WITH_DEXPREOPT := true
-#    endif
-#  endif
-#endif
-
 # Display
 NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
 TARGET_FORCE_HWC_FOR_VIRTUAL_DISPLAYS := true
@@ -135,7 +125,7 @@ MAX_EGL_CACHE_SIZE := 2048*1024
 OVERRIDE_RS_DRIVER:= libRSDriver_adreno.so
 
 # Encryption
-TARGET_HW_DISK_ENCRYPTION := true
+# TARGET_HW_DISK_ENCRYPTION := true
 
 # Filesystem
 BOARD_FLASH_BLOCK_SIZE := 131072 # (BOARD_KERNEL_PAGESIZE * 64)
@@ -173,7 +163,7 @@ TARGET_PER_MGR_ENABLED := true
 TARGET_POWERHAL_VARIANT := qcom
 
 # Properties
-TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
+TARGET_SYSTEM_PROP += device/xiaomi/kenzo/system.prop
 
 # Qualcomm
 BOARD_USES_QCOM_HARDWARE := true
