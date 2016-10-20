@@ -326,6 +326,11 @@ service rmt_storage /system/bin/rmt_storage
     user root
     writepid /dev/cpuset/system-background/tasks
 
+service tftp_server /system/bin/tftp_server
+    class main
+    user root
+ 
+
 service config_bt_addr /system/bin/btnvtool -O
     class core
     user bluetooth
