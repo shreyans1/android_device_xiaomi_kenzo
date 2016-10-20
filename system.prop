@@ -59,6 +59,11 @@ ro.sf.lcd_density=480
 # FRP
 ro.frp.pst=/dev/block/bootdevice/by-name/config
 
+persist.dbg.volte_avail_ovr=1
+persist.dbg.vt_avail_ovr=1
+persist.radio.VT_HYBRID_ENABLE=1
+
+
 # Media
 media.msm8956hw=1
 mm.enable.smoothstreaming=true
