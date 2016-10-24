@@ -228,6 +228,8 @@ vendor/lib/librcc.so
 vendor/lib/libvoice-svc.so
 -priv-app/ims/ims.apk
 -vendor/app/imssettings/imssettings.apk
+framework/ims-common.jar
+framework/imscmlibrary.jar
 
 
 # Camera actuators
